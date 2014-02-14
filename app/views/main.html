@@ -1,0 +1,27 @@
+<div class="header">
+  <ul class="nav nav-pills pull-right">
+    <li class="active"><a ng-href="#">Home</a></li>
+    <li><a ng-href="#">About</a></li>
+    <li><a ng-href="#">Contact</a></li>
+  </ul>
+  <h3 class="text-muted">angularKarma</h3>
+</div>
+<div></div>
+<div class="jumbotron">
+  <p class="lead">
+    Angular Grunt Karma Application
+  </p>
+  <div class="btn btn-lg btn-success" add-item-button>Add Item</div add-item-button>
+</div>
+
+<div class="row marketing">
+  <div ng-repeat="item in items">
+    <h4>{{item.title}}</h4>
+    <p>
+      {{item.description}}
+    </p>
+  </div>
+</div>
+
+<div class="footer">
+</div>
