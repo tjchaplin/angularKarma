@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('angularKarma')
-	.service('Tooltypeservice', ['$rootScope',function Tooltypeservice($rootScope) {
+	.service('itemService', ['$rootScope',function itemService($rootScope) {
 		var serivce = {
 			items : [
 				{title:'Title1',description:'Description1'},

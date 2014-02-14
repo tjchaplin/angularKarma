@@ -1,34 +1,34 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: ItemController', function () {
 
   // load the controller's module
   beforeEach(module('angularKarma'));
 
-  var MainCtrl,
-    scope,
-    tooltypeservice;
+  var scope;
+  var itemService;
+  var ItemController;
+
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope,Tooltypeservice) {
+  beforeEach(inject(function ($controller, $rootScope,_itemService_) {
     scope = $rootScope.$new();
-    tooltypeservice = Tooltypeservice;
-    MainCtrl = $controller('MainCtrl', {
+    itemService = _itemService_;
+    ItemController = $controller('ItemController', {
       $scope: scope,
-      Tooltypeservice:tooltypeservice
+      itemService: itemService
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
+  it('should attach a list of items to the scope', function () {
     expect(scope.items.length).toBe(2);
   });
 
   describe('Given an item is added to the service',function() {
     it('Should be added to controller items', function () {
-      tooltypeservice.addItem({title:'c',description:'c'});
+      itemService.addItem({title:'c',description:'c'});
       expect(scope.items.length).toBe(3);
     });
   });
-
 
 });

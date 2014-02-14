@@ -5,20 +5,19 @@ describe('Directive: addItemButton', function () {
   // load the directive's module
   beforeEach(module('angularKarma'));
 
-  var element,
-    scope,
-    toolTypeService;
+  var scope;
+  var itemService;
 
-  beforeEach(inject(function($rootScope,Tooltypeservice) {
+  beforeEach(inject(function($rootScope,_itemService_) {
     scope = $rootScope.$new();
-    toolTypeService = Tooltypeservice;
-    spyOn(toolTypeService, 'addItem');
+    itemService = _itemService_;
+    spyOn(itemService, 'addItem');
   }));
 
   it('should add item to service', inject(function ($compile) {
-    element = angular.element('<div add-item-button></div add-item-button>');
+    var element = angular.element('<div add-item-button></div add-item-button>');
     element = $compile(element)(scope);
     element.triggerHandler('click');
-    expect(toolTypeService.addItem).toHaveBeenCalled();
+    expect(itemService.addItem).toHaveBeenCalled();
   }));
 });

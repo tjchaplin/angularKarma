@@ -42,7 +42,7 @@ module.exports = function (grunt) {
         tasks: ['newer:copy:styles', 'autoprefixer']
       },
       gruntfile: {
-        files: ['Gruntfile.js']
+        files: ['gruntfile.js']
       },
       livereload: {
         options: {
@@ -112,10 +112,6 @@ module.exports = function (grunt) {
       'watch'
     ]);
   });
-
-  grunt.registerTask('test2', [
-    'watch:jsTest'
-  ]);
 
   grunt.registerTask('test', [
     'connect:test',
